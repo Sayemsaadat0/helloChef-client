@@ -1,9 +1,10 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 const Main = () => {
     return (
-        <div>
-            this is main
+        <div className='container mx-auto'>
+            <Outlet></Outlet>
         </div>
     );
 };
