@@ -2,8 +2,8 @@ import React from 'react';
 
 const App = () => {
   return (
-    <div>
-      hello world
+    <div className='bg-black text-white'>
+      hello worldssfdsf
     </div>
   );
 };
