@@ -8,7 +8,7 @@ import {
 const Footer = () => {
     return (
 
-        <footer className="footer footer-center p-10 bg-gradient-to-tr from-red-100 to-blue-200 text-base-content rounded">
+        <footer className="footer footer-center p-5 mt-10 bg-gradient-to-tr from-red-100 to-blue-200 text-base-content rounded">
            <img className='h-10' src="https://i.ibb.co/9ssRxKg/Untitled-design-2-prev-ui.png" alt="" />
             <div className="grid grid-flow-col gap-4">
                 <a className="link link-hover">About us</a>
