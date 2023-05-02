@@ -15,11 +15,11 @@ const Navbar = () => {
                         <Link to='/blogs'>Blogs</Link>
                 </div>
                 <div>
-              {
-                     user ?
-                      <img className='mr-5' src="" alt="profile" /> : 
-                     <Link className='bg-red-500 text-white w-20 text-center '>login</Link>
-              }
+                   {
+                    user ?  
+                    <img className='mr-5' src="" alt="profile" /> : 
+                    <Link className='bg-red-500 text-white w-20 text-center' to='/login'>Login</Link>
+                   }
                 </div>
             </div>
         </div>

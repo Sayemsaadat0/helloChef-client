@@ -8,7 +8,8 @@ const Main = () => {
         <div className='container mx-auto '>
             <Navbar></Navbar>
             <Outlet></Outlet>
-            <Footer></Footer>
+            <Footer></Footer> 
+          
         </div>
     );
 };

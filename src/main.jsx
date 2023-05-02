@@ -10,8 +10,16 @@ import Main from './Layout/Main.jsx';
 import Home from './Component/Home/Home.jsx';
 import Blogs from './Component/Blogs/Blogs.jsx';
 import ErrorPage from './Component/Errorpage/ErrorPage.jsx';
+import Login from './Component/LoginPage/Login/Login.jsx';
+import Register from './Component/LoginPage/Register/Register.jsx';
+/* import LoginPage from './Component/LoginPage/LoginPage.jsx';
+import Login from './Component/LoginPage/Login/Login.jsx';
+import Register from './Component/LoginPage/Register/Register.jsx'; */
+
 
 const router = createBrowserRouter([
+  
+ 
   {
     path: "/",
     element: <Main></Main>,
@@ -22,8 +30,16 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/blogs",
+        path: "blogs",
         element:<Blogs></Blogs>,
+      },
+      {
+        path: "login",
+        element:<Login></Login>,
+      },
+      {
+        path: "register",
+        element:<Register></Register>,
       },
     ],
   },
@@ -34,3 +50,25 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <RouterProvider router={router} />
   </React.StrictMode>,
 )
+
+
+
+
+/* 
+{
+    path : '/loginpage',
+    element : <LoginPage></LoginPage>,
+    children : [
+      {
+        path : 'login',
+        element : <Login></Login>
+      },
+      {
+        path : 'register',
+        element : <Register></Register>
+      },
+    ]
+
+  }, 
+
+*/
