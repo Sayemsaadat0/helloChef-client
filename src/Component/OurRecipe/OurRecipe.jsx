@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaStar } from 'react-icons/Fa';
 
 const OurRecipe = () => {
     return (
@@ -8,15 +9,22 @@ const OurRecipe = () => {
             <p className='w-96 text-center mx-auto mb-10'>
                 Lorem ipsum dolor sit, amet consectetur adipisicing ores alias, voluptates corporis libero.</p>
 
-            <div className='md:grid grid-cols-3  gap-10 gp'>
+            <div className='md:grid grid-cols-3 text-center gap-10 gp'>
 
                 {/* card 1  */}
-                <div className="card w-72 bg-base-100 shadow-xl mb-5">
+                <div className="card w-72 bg-base-100  mb-5">
                     <div className=''>
                         <div className="card-body p-0">
                             <img className='object-cover rounded-lg ' src="https://www.cktravels.com/wp-content/uploads/2020/12/what-to-eat-in-japan-1150x818.jpg" alt="" />
-                            <h2 className="card-title">Card title!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose</p>
+                            <p className='flex text-warning justify-center'>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                            </p>
+                            <p className='text-xs'>If a dog chews shoes whose shoes does he choose</p>
+                            <p>$ <span className='text-red-500 text-sm'>26</span> </p>
                         </div>
                     </div>
                 </div>
@@ -25,8 +33,15 @@ const OurRecipe = () => {
                     <div className=''>
                         <div className="card-body p-0">
                             <img className='object-cover rounded-lg mb-3' src="https://i.ibb.co/PZB54b8/1.png" alt="" />
-                            <h2 className="card-title">Card title!</h2>
+                            <p className='flex text-warning'>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                            </p>
                             <p>If a dog chews shoes whose shoes does he choose</p>
+                            <p>$ <span className='text-red-500 text-sm'>26</span> </p>
                         </div>
                     </div>
                 </div>
@@ -35,8 +50,15 @@ const OurRecipe = () => {
                     <div className=''>
                         <div className="card-body p-0">
                             <img className='object-cover rounded-lg ' src="https://i.ibb.co/XpTynpW/2.png" alt="" />
-                            <h2 className="card-title">Card title!</h2>
+                            <p className='flex text-warning'>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                            </p>
                             <p>If a dog chews shoes whose shoes does he choose</p>
+                            <p>$ <span className='text-red-500 text-sm'>26</span> </p>
                         </div>
                     </div>
                 </div>
@@ -45,8 +67,15 @@ const OurRecipe = () => {
                     <div className=''>
                         <div className="card-body p-0">
                             <img className='object-cover rounded-lg ' src="https://i.ibb.co/7CkvZ2K/3.png" alt="" />
-                            <h2 className="card-title">Card title!</h2>
+                            <p className='flex text-warning'>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                            </p>
                             <p>If a dog chews shoes whose shoes does he choose</p>
+                            <p>$ <span className='text-red-500 text-sm'>26</span> </p>
                         </div>
                     </div>
                 </div>
@@ -55,8 +84,13 @@ const OurRecipe = () => {
                     <div className=''>
                         <div className="card-body p-0">
                             <img className='object-cover rounded-lg ' src="https://i.ibb.co/17W42HJ/4.png" alt="" />
-                            <h2 className="card-title">Card title!</h2>
+                            <p className='flex text-warning'>
+                                <FaStar></FaStar><FaStar></FaStar>
+                                <FaStar></FaStar><FaStar></FaStar>
+                                <FaStar></FaStar>
+                            </p>
                             <p>If a dog chews shoes whose shoes does he choose</p>
+                            <p>$ <span className='text-red-500 text-sm'>26</span> </p>
                         </div>
                     </div>
                 </div>
@@ -65,8 +99,15 @@ const OurRecipe = () => {
                     <div className=''>
                         <div className="card-body p-0">
                             <img className='object-cover rounded-lg ' src="https://i.ibb.co/ZxZjXpv/5.png" alt="" />
-                            <h2 className="card-title">Card title!</h2>
+                            <p className='flex text-warning'>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                            </p>
                             <p>If a dog chews shoes whose shoes does he choose</p>
+                            <p>$ <span className='text-red-500 text-sm'>26</span> </p>
                         </div>
                     </div>
                 </div>
