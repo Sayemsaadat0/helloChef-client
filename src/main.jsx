@@ -12,6 +12,7 @@ import Blogs from './Component/Blogs/Blogs.jsx';
 import ErrorPage from './Component/Errorpage/ErrorPage.jsx';
 import Login from './Component/LoginPage/Login/Login.jsx';
 import Register from './Component/LoginPage/Register/Register.jsx';
+import ChefRecipe from './Component/ChefRecipe/ChefRecipe.jsx';
 /* import LoginPage from './Component/LoginPage/LoginPage.jsx';
 import Login from './Component/LoginPage/Login/Login.jsx';
 import Register from './Component/LoginPage/Register/Register.jsx'; */
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "blogs",
         element:<Blogs></Blogs>,
+      },
+      {
+        path: "/chef/:id",
+        element:<ChefRecipe></ChefRecipe>,
       },
       {
         path: "login",
