@@ -45,7 +45,7 @@ const Login = () => {
                             hover:bg-black">
                                     Sign in
                                 </button>
-                                <p className='mt-4'>not have an account ? <Link className='underline' to='/register'>Register here</Link></p>
+                                <p className='mt-4'>not have an account ? <Link className='underline text-red-500' to='/register'>Register here</Link></p>
                             </div>
                         </form>
                         <button className="btn btn-outline btn-error mt-10 ">

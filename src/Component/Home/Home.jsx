@@ -2,19 +2,19 @@ import React from 'react';
 import Header from '../Header/Header';
 import OurRecipe from '../OurRecipe/OurRecipe';
 import Feedback from '../Feedback/Feedback';
-import { Outlet } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import Chef from '../Chef/Chef';
+
 
 
 const Home = () => {
     return (
         <div>
-         
+
             <Header></Header>
+            <Chef></Chef>
             <OurRecipe></OurRecipe>
             <Feedback></Feedback>
-         
+
         </div>
     );
 };

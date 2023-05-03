@@ -3,7 +3,7 @@ import { FaStar } from 'react-icons/Fa';
 
 const OurRecipe = () => {
     return (
-        <div className='mx-5'>
+        <div className='mx-5 mt-10'>
             <h2 className='text-center mt-20 mb-2 text-red-500 font-bold text-3xl'>
                 Explore Our Hot Selling Recipe</h2>
             <p className='w-96 text-center mx-auto mb-10'>
