@@ -1,8 +1,45 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub } from 'react-icons/Fa';
 import { FcGoogle } from 'react-icons/Fc';
+import { AuthContext } from '../../Provider/AuthProvider';
 const Login = () => {
+
+    const location = useLocation()
+    const from = location.state?.from?.pathname || `/`
+    const navigate = useNavigate()
+    const {signinUser,googleSignIn} = useContext(AuthContext)
+   
+   
+    const handleSignin = (event)=>{
+        event.preventDefault()
+        const form = event.target
+        const email = form.email.value 
+        const password = form.password.value 
+        console.log(email,password)
+        signinUser(email,password)
+        .then(result =>{
+            const loggedUser = result.user 
+            console.log(loggedUser)
+            form.reset()
+            navigate(from, {replace : true})
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    }
+
+    const handleGoogle = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                navigate(from, { replace: true });
+            })
+            .catch(error => console.error(error))
+    }
+
+
     return (
         <div>
             <div className=" bg-white flex  justify-center py-12 sm:px-6 lg:px-8">
@@ -19,7 +56,7 @@ const Login = () => {
                     <div className="bg-gradient-to-br flex flex-col py-10   shadow-lg sm:rounded-lg px-2
                 hover:shadow-red-400 w-[75%] mx-auto 
                 ">
-                        <form className="space-y-6 " action="#" method="POST">
+                        <form onSubmit={handleSignin} className="space-y-6 " action="#" method="POST">
                             <div>
                                 <label htmlFor="email" className=" block text-sm font-medium ">
                                     Email address
@@ -48,7 +85,7 @@ const Login = () => {
                                 <p className='mt-4'>not have an account ? <Link className='underline text-red-500' to='/register'>Register here</Link></p>
                             </div>
                         </form>
-                        <button className="btn btn-outline btn-error mt-10 ">
+                        <button onClick={handleGoogle} className="btn btn-outline btn-error mt-10 ">
                             <FcGoogle className='w-10'></FcGoogle>
                             Login With Google</button>
                         <button className="btn btn-outline  mt-3">

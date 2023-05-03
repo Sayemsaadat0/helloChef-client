@@ -13,6 +13,8 @@ import ErrorPage from './Component/Errorpage/ErrorPage.jsx';
 import Login from './Component/LoginPage/Login/Login.jsx';
 import Register from './Component/LoginPage/Register/Register.jsx';
 import ChefRecipe from './Component/ChefRecipe/ChefRecipe.jsx';
+import AuthProvider from './Component/Provider/AuthProvider.jsx';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
 /* import LoginPage from './Component/LoginPage/LoginPage.jsx';
 import Login from './Component/LoginPage/Login/Login.jsx';
 import Register from './Component/LoginPage/Register/Register.jsx'; */
@@ -36,7 +38,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/chef/:id",
-        element:<ChefRecipe></ChefRecipe>,
+        element:<PrivateRoute><ChefRecipe></ChefRecipe>
+          </PrivateRoute>,
       },
       {
         path: "login",
@@ -52,7 +55,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <RouterProvider router={router} />
+    <AuthProvider>
+        <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
 

@@ -1,7 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
+
+    const { createUser } = useContext(AuthContext)
+
+    const handleRegister = (event) => {
+        event.preventDefault()
+
+        const form = event.target
+        const email = form.email.value
+        const name = form.name.value
+        const password = form.password.value
+        const photo = form.photo.value
+        console.log(email, name, password, photo)
+        createUser(email, password)
+            .then(result => {
+                const createduser = result.user
+                console.log(createduser)
+                form.reset()
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+
+
+
+
+
+
+
+
+
     return (
         <div>
             <div className=" bg-white md:flex  justify-center py-12 sm:px-6 lg:px-8">
@@ -16,7 +49,7 @@ const Register = () => {
                     </h2>
                 </div>
                     <div className=" py-8 px-4 shadow-lg w-[80%] bg-opacity-5 mx-auto sm:rounded-lg sm:px-10">
-                        <form className="space-y-6 " action="#" method="POST">
+                        <form onSubmit={handleRegister} className="space-y-6 " action="#" method="POST">
                             <div>
                                 <label htmlFor="email" className=" block text-sm font-medium ">
                                     Email address
