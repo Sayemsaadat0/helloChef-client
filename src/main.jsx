@@ -15,9 +15,7 @@ import Register from './Component/LoginPage/Register/Register.jsx';
 import ChefRecipe from './Component/ChefRecipe/ChefRecipe.jsx';
 import AuthProvider from './Component/Provider/AuthProvider.jsx';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
-/* import LoginPage from './Component/LoginPage/LoginPage.jsx';
-import Login from './Component/LoginPage/Login/Login.jsx';
-import Register from './Component/LoginPage/Register/Register.jsx'; */
+
 
 
 const router = createBrowserRouter([
@@ -39,9 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/chef/:id",
         element:<PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:6969/chefData/${params.id}`)
+        loader:({params})=>fetch(`https://hellochef-server-sayemsaadat0.vercel.app/chefData/${params.id}`),
 
       },
+    
       {
         path: "login",
         element:<Login></Login>,

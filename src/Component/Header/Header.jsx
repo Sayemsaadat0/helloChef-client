@@ -19,7 +19,7 @@ const Header = () => {
                 className='bg-red-500
                  border-none hover:border-none mt-5 w-[25%] h-8 text-white
                  hover:bg-black rounded-sm
-                 '>btn</button>
+                 '>Discover more</button>
             </div>
 
             <div className='w-full '>

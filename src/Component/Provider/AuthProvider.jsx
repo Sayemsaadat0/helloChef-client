@@ -8,38 +8,38 @@ const auth = getAuth(firebaseApp)
 
 const AuthProvider = ({ children }) => {
 const [user, setUser] = useState(null)
-const [loader,setLoader] = useState(true) 
+const [loading,setloading] = useState(true) 
 
 const googleProvider = new GoogleAuthProvider();
 const gitProvider = new GithubAuthProvider()
 
 const createUser = (email, password) =>{
-    setLoader(true)
+    setloading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const signinUser = (email,password)=>{
-        setLoader(true)
+        setloading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
     const googleSignIn = () => {
-        setLoader(true);
+        setloading(true);
         return signInWithPopup(auth, googleProvider)
     };
     const gitSignIn = () =>{
-        setLoader(true)
+        setloading(true)
         return signInWithPopup(auth, gitProvider)
     }
 
   const logout = () =>{
-    setLoader(true)
+    setloading(true)
     return signOut(auth);
   } 
 
 useEffect(()=>{
 const unsub = onAuthStateChanged(auth,loggedUser =>{
-    // console.log('sdjughfjkdhfdhf', loggedUser)
+    
     setUser(loggedUser)
-    setLoader(false)
+    setloading(false)
 })
 return () =>{
     unsub()
@@ -53,7 +53,7 @@ return () =>{
         createUser,
         signinUser,
         logout,
-        loader,
+        loading,
         googleSignIn,
         gitSignIn
     }

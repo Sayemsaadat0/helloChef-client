@@ -117,7 +117,7 @@ const OurRecipe = () => {
                     className='bg-red-500
                  border-none hover:border-none mt-5 w-[20%] h-8 text-white
                  hover:bg-black rounded-sm
-                 '>btn</button>
+                 '>See More recipies</button>
             </div>
 
 
