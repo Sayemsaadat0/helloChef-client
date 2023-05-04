@@ -1,9 +1,12 @@
-import React, { useContext } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate, useRouteError } from 'react-router-dom';
 import { FaGithub } from 'react-icons/Fa';
 import { FcGoogle } from 'react-icons/Fc';
 import { AuthContext } from '../../Provider/AuthProvider';
 const Login = () => {
+
+    const [error , setError] = useState('')
+    const defaultError = useRouteError()
 
     const location = useLocation()
     const navigate = useNavigate();
@@ -12,10 +15,19 @@ const Login = () => {
     const from = location.state?.from?.pathname || `/`
    
     const handleSignin = (event)=>{
+        setError('')
         event.preventDefault()
         const form = event.target
         const email = form.email.value 
+       
         const password = form.password.value 
+        if(password.length < 6){
+            setError('password must contain 6 character')
+        }
+        else{
+            setError('')
+        }
+
         console.log(email,password)
         signinUser(email,password)
         .then(result =>{
@@ -25,7 +37,7 @@ const Login = () => {
             navigate(from, {replace : true})
         })
         .catch(error =>{
-            console.log(error)
+          setError(error.message)
         })
     }
 
@@ -82,6 +94,7 @@ const Login = () => {
                                 <div className="mt-1">
                                     <input id="password" name="password" type="password" required className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none  sm:text-sm" />
                                 </div>
+                                
                             </div>
 
                             <div>
@@ -92,6 +105,10 @@ const Login = () => {
                                     Sign in
                                 </button>
                                 <p className='mt-4'>not have an account ? <Link className='underline text-red-500' to='/register'>Register here</Link></p>
+                                <p className='text-red-500 font-semibold'>
+                                    {error}
+                                </p>
+                               
                             </div>
                         </form>
                         <button onClick={handleGoogle} className="btn btn-outline btn-error mt-10 ">

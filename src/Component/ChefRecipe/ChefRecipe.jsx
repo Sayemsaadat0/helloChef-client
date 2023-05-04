@@ -1,6 +1,8 @@
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { GrFavorite, GrLike } from 'react-icons/Gr';
 import toast, { Toaster } from 'react-hot-toast';
+import LazyLoad from 'react-lazy-load';
+import './ChefRecipe.css'
 
 
 
@@ -16,7 +18,10 @@ const ChefRecipe = () => {
             {/* chef bannner details */}
             <div className='flex bg-red-500 shadow-xl text-white'>
                 <div>
-                    <img src={chef_picture} alt="" />
+                    <LazyLoad  threshold={0.95}>
+                        <img src={chef_picture} alt="" />
+                    </LazyLoad>
+
                 </div>
                 <div className='w-96  mx-auto flex flex-col justify-center'>
                     <p>
