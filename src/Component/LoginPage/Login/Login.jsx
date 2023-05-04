@@ -7,7 +7,7 @@ const Login = () => {
 
     const location = useLocation()
     const navigate = useNavigate();
-    const {signinUser,googleSignIn} = useContext(AuthContext)
+    const {signinUser,googleSignIn , gitSignIn} = useContext(AuthContext)
     
     const from = location.state?.from?.pathname || `/`
    
@@ -31,6 +31,15 @@ const Login = () => {
 
     const handleGoogle = () => {
         googleSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                navigate(from, { replace: true });
+            })
+            .catch(error => console.error(error))
+    }
+    const handleGithub = () => {
+        gitSignIn()
             .then(result => {
                 const user = result.user;
                 console.log(user)
@@ -88,7 +97,7 @@ const Login = () => {
                         <button onClick={handleGoogle} className="btn btn-outline btn-error mt-10 ">
                             <FcGoogle className='w-10'></FcGoogle>
                             Login With Google</button>
-                        <button className="btn btn-outline  mt-3">
+                        <button onClick={handleGithub} className="btn btn-outline  mt-3">
                             <FaGithub  className='w-10'></FaGithub>
                             Login With Github</button>
                     </div>
