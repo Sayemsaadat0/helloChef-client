@@ -3,10 +3,23 @@ import { GrFavorite, GrLike } from 'react-icons/Gr';
 import toast, { Toaster } from 'react-hot-toast';
 import LazyLoad from 'react-lazy-load';
 import './ChefRecipe.css'
+import { useEffect, useState } from 'react';
 
 
-
+// http://localhost:6969/recipe/1
 const ChefRecipe = () => {
+   /*  const [recipe, setrecipe] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:6969/recipe/${id}`)
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error))
+    },
+        [])
+ */
+
+
     const notify = () => toast('added to favoroit');
     // const { id } = useParams()
     const chefData = useLoaderData();

@@ -5,16 +5,15 @@ const Header = () => {
         <div className='sm:mt-5 md:mt-4 ms-6 md:flex justify-around'>
             <div className='text-left  w-full flex flex-col justify-center '>
                 <h1 className='text-3xl font-bold  mb-3 '>
-                    Lorem ipsum dolor <br />  
+                Where Every Bite Tells a Story of  <br />  
                     <span className='text-red-500'>
-                    sit amet.
+                    Flavors and Tradition
                     </span>
                 </h1>
                 <p className='text-left
                 mr-10
                 md:w-[75%]'>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quam fuga minima ab labore dolorum vero necessitatibus quis sunt omnis.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quam fuga minima ab labore dolorum vero necessitatibus quis sunt omnis.
+                    Gold Roger was known as the "Pirate King," the strongest and most infamous being to have sailed the Grand Line. The capture and execution of Roger by the World Government brought a change throughout the world.
                 </p>
                 <button 
                 className='bg-red-500

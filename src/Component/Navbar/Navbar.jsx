@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import './Navbar.css'
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import LazyLoad from 'react-lazy-load';
 
 const Navbar = () => {
     const { user ,logout} = useContext(AuthContext)
@@ -29,7 +30,9 @@ const Navbar = () => {
                     user ?  
                    <>
                     <div className='tooltip tooltip-error' data-tip={user.displayName}> 
+                    <LazyLoad threshold={0.95}>
                     <img className='mr-5 h-10 rounded-full'  src={user.photoURL} alt=""/>
+                    </LazyLoad>
                     </div>
                     <button onClick={handlelogout} className=' text-red-500 hover:shadow-lg w-20 text-center'>
                         log out
