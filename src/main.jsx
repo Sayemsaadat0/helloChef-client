@@ -38,8 +38,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/chef/:id",
-        element:<PrivateRoute><ChefRecipe></ChefRecipe>
-          </PrivateRoute>,
+        element:<PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
+        loader:({params})=>fetch(`http://localhost:6969/chefData/${params.id}`)
+
       },
       {
         path: "login",

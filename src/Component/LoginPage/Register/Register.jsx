@@ -26,15 +26,6 @@ const Register = () => {
             })
     }
 
-
-
-
-
-
-
-
-
-
     return (
         <div>
             <div className=" bg-white md:flex  justify-center py-12 sm:px-6 lg:px-8">
