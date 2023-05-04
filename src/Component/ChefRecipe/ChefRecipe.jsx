@@ -1,52 +1,56 @@
-import React, { useRef } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
-import { GrFavorite } from 'react-icons/Gr';
-import { jsPDF } from 'jspdf';
+import { GrFavorite, GrLike } from 'react-icons/Gr';
 import toast, { Toaster } from 'react-hot-toast';
-import html2canvas from 'html2canvas';
+
+
 
 const ChefRecipe = () => {
-
     const notify = () => toast('added to favoroit');
-    
-    const { id } = useParams()
+    // const { id } = useParams()
     const chefData = useLoaderData();
     console.log(chefData[0]);
-    const { } = chefData[0];
+    const { chef_name, chef_picture, chef_short_bio, year_of_experience, number_of_recipes, likes } = chefData[0];
 
-    const printRef = useRef();
-
-    const handleDownloadPdf = async () => {
-        console.log('clicked')
-        const element = printRef.current;
-        const canvas = await html2canvas(element);
-        const data = canvas.toDataURL('image/png');
-
-        const pdf = new jsPDF();
-        const imgProperties = pdf.getImageProperties(data);
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight =
-            (imgProperties.height * pdfWidth) / imgProperties.width;
-
-        pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
-        pdf.save('print.pdf');
-    };
     return (
-        <div  ref={printRef}>
-            chef recipe {id}
-            <Link className='block bg-red-400 px-5 w-36 text-center text-white py-2 mt-5' to='/'>
-                go home
-            </Link>
-
-            <div className='card shadow-lg w-60 mt-10 bg-yellow-200'>
-                <p className='card-title '>
-                    something  <button onClick={notify}>
-                        <Toaster></Toaster>
-                        <GrFavorite></GrFavorite>
-                    </button>
-                </p>
-                <button className='btn mt-20' onClick={handleDownloadPdf} >dfdf</button>
+        <div >
+            {/* chef bannner details */}
+            <div className='flex bg-red-500 shadow-xl text-white'>
+                <div>
+                    <img src={chef_picture} alt="" />
+                </div>
+                <div className='w-96  mx-auto flex flex-col justify-center'>
+                    <p>
+                        Chef Name : {chef_name}</p>
+                    <p>
+                        Details : {chef_short_bio}
+                    </p>
+                    <p>
+                        Year of experience : {year_of_experience} Years
+                    </p>
+                    <p>
+                        Number of Recipes {number_of_recipes}
+                    </p>
+                    <p className='flex gap-2 items-center'>
+                        <GrLike></GrLike> {likes}
+                    </p>
+                    <Link className='block outline px-5 w-36 text-center text-white py-2 mt-5 hover:bg-red-700' to='/'>
+                        Go home
+                    </Link>
+                </div>
             </div>
+            {/*  food card  */}
+            <div>
+                <div className='card shadow-lg w-60 mt-10 bg-yellow-200'>
+                    <p className='card-title '>
+                        kich shhfdjsdjj
+                        <button onClick={notify}>
+                            <Toaster></Toaster>
+                            <GrFavorite></GrFavorite>
+                        </button>
+                    </p>
+                </div>
+            </div>
+
         </div>
     );
 };

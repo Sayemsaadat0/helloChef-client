@@ -1,9 +1,33 @@
 import React from 'react';
+import { useRef } from 'react';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
+
+
 
 const Blogs = () => {
+    const printRef = useRef();
+
+    const handleDownloadPdf = async () => {
+
+        const element = printRef.current;
+        const canvas = await html2canvas(element);
+        const data = canvas.toDataURL('image/png');
+        const pdf = new jsPDF();
+        const imgProperties = pdf.getImageProperties(data);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight =
+            (imgProperties.height * pdfWidth) / imgProperties.width;
+
+        pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('print.pdf');
+
+    };
     return (
-        <div className=' md:mx-20  gap-10 gp'>
-            <div className="card w-full bg-base-100 shadow-xl mb-10">
+        <div  className=' md:mx-20  gap-10 gp'>
+          <button className='btn btn-error text-white' onClick={handleDownloadPdf}>download</button>
+           <div ref={printRef}>
+           <div className="card w-full bg-base-100 shadow-xl mb-10">
                 <div className="card-body">
                     <h2 className="card-title">Differences between uncontrolled and controlled components</h2>
                     <p> <span className='font-bold'>Controlled Component : </span>
@@ -72,7 +96,8 @@ const Blogs = () => {
 
                 </div>
             </div>
-
+           </div>
+            
         </div>
     );
 };
