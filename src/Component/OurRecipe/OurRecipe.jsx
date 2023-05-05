@@ -6,8 +6,8 @@ const OurRecipe = () => {
         <div className='mx-5 mt-10'>
             <h2 className='text-center mt-20 mb-2 text-red-500 font-bold text-3xl'>
                 Explore Our Hot Selling Recipe</h2>
-            <p className='w-96 text-center mx-auto mb-10'>
-                Lorem ipsum dolor sit, amet consectetur adipisicing ores alias, voluptates corporis libero.</p>
+            <p className='w-[50%] text-center mx-auto mb-10'>
+            Discover our most popular recipes that have been tried and loved by many. From mouth-watering mains to decadent desserts, these recipes are sure to impress.</p>
 
             <div className='md:grid grid-cols-3 text-center gap-10 gp'>
 

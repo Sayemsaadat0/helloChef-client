@@ -15,6 +15,7 @@ const Chef = () => {
     return (
         <div className='mt-10 '>
             <h2 className='text-center mt-20 mb-10 text-red-500 font-bold text-3xl '>Meet Our Talented Chef</h2>
+            <p  className='w-[50%] mx-auto text-center mb-10'>Get to know the mastermind behind our delicious dishes. Learn about our chef's background, culinary philosophy, and signature recipes that will tantalize your taste buds.</p>
             <div className='md:grid grid-cols-3'>
                 {
                     chef.map(c =>
